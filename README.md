@@ -1,5 +1,7 @@
 # ECommerceAngular
-Projeto Desenvolvido Baseado nas aulas sobre Angular na Plataforma da Dio - Santander Bootcamp Fullstack Developer
+Projeto Desenvolvido Baseado nas aulas sobre Angular na Plataforma da Dio - Santander Bootcamp Fullstack Developer.
+
+Servidor API dentro da pasta Servidor.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
