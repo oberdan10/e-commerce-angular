@@ -1,0 +1,30 @@
+<app-products-registration (atualizaListaProdutos)="atualizaLista($event)"></app-products-registration>
+
+<h2>Lista de Produtos</h2>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mdCadastrarProduto">Novo Produto</button>
+<hr>
+
+  <div class="col-md-6">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" [(ngModel)]="filtrar" placeholder="Descrição do Item" aria-label="Descrição do Item" aria-describedby="btnPesquisarProduto">
+      <button class="btn btn-outline-secondary" type="button" id="btnPesquisarProduto">Pesquisar</button>
+    </div>
+  </div>
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Produto</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of _produtosFiltrados">
+      <tr>
+        <th scope="row"><app-cartao [item]="item"></app-cartao></th>
+        <td>
+          <button type="button" class="btn btn-info" [routerLink]="['/produto/info', item.id]" >Editar</button>
+          <button type="button" class="btn btn-danger" (click)="deleteById(item.id)" >Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

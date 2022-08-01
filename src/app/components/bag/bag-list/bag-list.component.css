@@ -1,0 +1,15 @@
+.row-centralizando{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.bag{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.bag::after{
+    content: " Sacola"
+}

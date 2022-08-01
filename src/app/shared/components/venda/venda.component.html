@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="mdVendas" tabindex="-1" aria-labelledby="mdVendasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mdVendasLabel">Sacola</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <table class="table caption-top">
+                <caption>Lista de Produtos</caption>
+                <thead>
+                  <tr>
+                    <th scope="col-md">Produto</th>
+                    <th scope="col-md">Quantidade</th>
+                    <th scope="col-md">Preço (unitário)</th>
+                    <th scope="col-md">Total</th>
+                    <th scope="col-md">Opções</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let item of vendas">
+                  <tr>
+                    <td>{{item.nameProduct}}</td>
+                    <td>{{item.quantityNew}}</td>
+                    <td>{{item.price | format }}</td>
+                    <td>{{item.price*item.quantityNew! | format }}</td>
+                    <td><a class="link-remover" (click)="removerProduto(item.id!)"><i class="bi bi-cart-dash btn-remover"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <hr>
+              <p><strong>Total: </strong>{{ totalVendas | format }}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+          <button type="button" class="btn btn-success" (click)="save()">Finalizar Pedido</button>
+        </div>
+      </div>
+    </div>
+  </div>

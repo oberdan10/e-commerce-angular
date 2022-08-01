@@ -1,0 +1,14 @@
+.card-compras{
+    width: 330px;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-compras img{
+    margin-top: 20px;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+

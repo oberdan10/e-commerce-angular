@@ -1,0 +1,39 @@
+<form #produtoEditForm="ngForm">
+    <h2>Informação de Produto</h2>
+    <hr>
+
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="container text-center">
+              <div class="row align-items-start">
+                <div class="row text-center">
+                  <div class="col">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Descrição</span>
+                      <input disabled type="text" class="form-control" name="Descricao" [value]="item?.name" placeholder="Descrição" aria-label="Descricao"
+                        aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Preço</span>
+                      <input type="number" class="form-control" id="Preco" [value]="item?.price" placeholder="Preço" aria-label="Preco"
+                        aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1">Categoria</span>
+                      <input type="text" class="form-control" id="Categoria" [value]="item?.category" placeholder="Categoria" aria-label="Categoria"
+                        aria-describedby="basic-addon1">
+                    </div>
+                  </div>             
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <div class="modal-footer" style="margin-bottom:70%">
+            <button type="button" class="btn btn-secondary"  [routerLink]="['']" >Voltar</button>
+            <button type="button" class="btn btn-primary"  style="margin-left:10px" (click)="save()">Editar</button>
+          </div>
+        </div>
+      </div>
+  </form>

@@ -1,0 +1,10 @@
+<div class="conteudo">
+    <img [src]="item.imageUrl" [alt]="item.name" class="imagem">
+<div class="texto">
+    <p id="descricao">Descrição: {{item.name}}</p>
+    <p id="categoria">Categoria: {{item.category}}</p>
+    <p id="preco">Preço: {{item.price | format }}</p>
+    <p id="quantidade">Quantidade: {{item.quantity}} {{ item.unity }}</p>
+    <p id="total">Total: {{item.quantity*item.price | format }}</p>
+</div></div>
+

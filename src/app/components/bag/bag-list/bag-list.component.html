@@ -1,0 +1,45 @@
+<app-venda [vendas]="_vendas" [totalVendas]="vendasTotal" (atualizaVenda)="vendasClick($event)"></app-venda>
+<div class="row">
+  <div class="col-md"><h2>Produtos</h2></div>
+  <div class="col-md">
+    <ul class="nav justify-content-end " >
+      <a data-bs-toggle="modal" data-bs-target="#mdVendas" ><i class="bi bi-bag-fill bag"></i></a>
+    </ul>
+  </div>
+</div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title">Filtros</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Preço</h6>
+            <div class="input-group">
+              <input type="number" aria-label="minPreco" id="minPreco" placeholder="Menor Preço" class="form-control" [(ngModel)]="filtrarMenorPreco">
+              <input type="number" aria-label="maxPreco" id="maxPreco" placeholder="Maior Preço" class="form-control" [(ngModel)]="filtrarMaiorPreco">
+            </div>
+            <hr>
+            <a class="card-subtitle mb-2 text-muted" (click)="todosProdutos()"><strong>Restaurar Filtros</strong></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card" >
+          <div class="card-body">
+            <h6 class="card-title">Categorias</h6>
+            <ul class="nav justify-content-end" >
+              <app-categoria *ngFor="let item of _categoriaUnica" [categoria]="item" (categoriaEscolhida)="categoryClick($event)"></app-categoria>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+<hr>
+
+<div class="row row-centralizando">
+  <app-card-compra 
+  class="col-md" 
+  *ngFor="let item of _produtosFiltrados" 
+  [item]="item"
+  (vendaEscolhida)="bagClick($event)" ></app-card-compra>
+</div>
+        

@@ -1,0 +1,68 @@
+<form #produtoForm="ngForm">
+
+  <!-- Modal -->
+  <div class="modal fade" id="mdCadastrarProduto" data-bs-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="mdCadastrarProdutoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="mdCadastrarProdutoLabel">Cadastro de Produto</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="container text-center">
+            <div class="row align-items-start">
+              <div class="row text-center">
+                <div class="col">
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Descrição</span>
+                    <input type="text" class="form-control" id="Descricao" placeholder="Descrição" aria-label="Descricao"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Preço</span>
+                    <input type="number" class="form-control" id="Preco" placeholder="Preço" aria-label="Preco"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Quantidade</span>
+                    <input type="number" class="form-control" id="Quantidade" placeholder="Quantidade" aria-label="Quantidade"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <select class="form-select" id="Unidade" aria-label="Default select example">
+                      <option selected>Selecione a Unidade</option>
+                      <option value="UN">Unidade</option>
+                      <option value="PÇ">Peça</option>
+                      <option value="CX">Caixa</option>
+                      <option value="KG">KiloGrama</option>
+                      <option value="G">Grama</option>
+                      <option value="M">Metro</option>
+                    </select>
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Categoria</span>
+                    <input type="text" class="form-control" id="Categoria" placeholder="Categoria" aria-label="Categoria"
+                      aria-describedby="basic-addon1">
+                  </div>
+                  <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputFile" (change)="onChange($event)">
+                    <label class="input-group-text" for="inputFile">Arquivo</label>
+                  </div>
+                </div>             
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Voltar</button>
+          <button type="button" class="btn btn-primary" (click)="save()" data-bs-dismiss="modal">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
