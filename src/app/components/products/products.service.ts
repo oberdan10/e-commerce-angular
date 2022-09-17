@@ -8,7 +8,7 @@ import { Product } from "src/app/models/product";
 })
 export class ProductsService {
 
-  private produtoUrl: string = "http://localhost:3100/api/produto";
+  private produtoUrl: string = "http://192.168.18.123:3100/api/produto";
   constructor(private httpClient: HttpClient) { }
 
   retrieveAll() : Observable<Product[]> {
